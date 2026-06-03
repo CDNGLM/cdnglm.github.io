@@ -1,10 +1,8 @@
-/* ==========================================================================
-   1. RESETEO GENERAL Y VARIABLES
-   ========================================================================== */
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Evita que el padding deforme las dimensiones */
+  box-sizing: border-box; 
 }
 
 body {
@@ -14,16 +12,14 @@ body {
   line-height: 1.6;
 }
 
-/* ==========================================================================
-   2. BARRA DE NAVEGACIÓN (SUPERIOR)
-   ========================================================================== */
+
 .navbar {
   display: flex;
-  justify-content: space-between; /* Logo a la izquierda, enlaces a la derecha */
-  align-items: center;            /* Centra verticalmente */
-  background-color: #1e1e24;      /* Gris oscuro elegante */
+  justify-content: space-between;
+  align-items: center;          
+  background-color: #1e1e24;      
   padding: 15px 40px;
-  position: sticky;               /* Se queda fijo arriba al hacer scroll */
+  position: sticky;              
   top: 0;
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -42,7 +38,7 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 25px;                      /* Espacio exacto entre enlaces */
+  gap: 25px;                     
 }
 
 .navbar-links a {
@@ -54,10 +50,10 @@ body {
 }
 
 .navbar-links a:hover {
-  color: #00adb5;                 /* Cambia a cian al pasar el mouse */
+  color: #00adb5;                 
 }
 
-/* Enlace especial para GitHub estilo Botón */
+
 .navbar-links a.btn-github {
   color: #ffffff;
   background-color: #00adb5;
@@ -71,9 +67,7 @@ body {
   color: #ffffff;
 }
 
-/* ==========================================================================
-   3. SECCIÓN HERO (BIENVENIDA)
-   ========================================================================== */
+
 .bienvenida {
   background-color: #252830;
   color: #ffffff;
@@ -114,9 +108,7 @@ body {
   box-shadow: 0 4px 15px rgba(0, 173, 181, 0.4);
 }
 
-/* ==========================================================================
-   4. SECCIÓN DIVIDIDA A LA MITAD (50% / 50%)
-   ========================================================================== */
+
 .split-section {
   padding: 80px 40px;
   background-color: #ffffff;
@@ -125,12 +117,11 @@ body {
 .split-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;                  /* Activamos Flexbox */
-  align-items: center;            /* Centra el texto verticalmente con la imagen */
-  gap: 50px;                      /* Espacio de separación entre las dos mitades */
+  display: flex;                  
+  align-items: center;           
+  gap: 50px;                      
 }
 
-/* Ambas columnas ocupan exactamente el mismo espacio (el 50% disponible) */
 .split-left, .split-right {
   flex: 1; 
 }
@@ -146,7 +137,7 @@ body {
   color: #555555;
 }
 
-/* Imagen responsiva para que no se deforme ni se desborde */
+
 .responsive-img {
   width: 100%;
   height: auto;
@@ -155,9 +146,7 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* ==========================================================================
-   5. SECCIÓN DE FORMULARIO / INTERACTIVA
-   ========================================================================== */
+
 .form-section {
   padding: 80px 20px;
 }
@@ -181,16 +170,15 @@ body {
   margin-bottom: 30px;
 }
 
-/* Contenedor que pone el Input y el Link en la misma línea */
+
 .interactive-elements {
   display: flex;
-  flex-direction: column;         /* Por defecto apilados en móvil */
+  flex-direction: column;         
   gap: 25px;
 }
 
 
 
-/* Estilo del Enlace dentro de la tarjeta */
 .web-link {
   color: #00adb5;
   text-decoration: none;
@@ -205,15 +193,13 @@ body {
   color: #007a80;
 }
 
-/* Etiquetas de estado secundarias en gris */
+
 .state-label {
   font-size: 13px;
   color: #888888;
 }
 
-/* ==========================================================================
-   6. PIE DE PÁGINA (FOOTER)
-   ========================================================================== */
+
 .main-footer {
   background-color: #1e1e24;
   color: #a0aab2;
@@ -222,15 +208,12 @@ body {
   font-size: 14px;
 }
 
-/* ==========================================================================
-   7. RESPONSIVE DESIGN (Diseño para celulares)
-   ========================================================================== */
+
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
   }
-  
-  /* La sección dividida se apila verticalmente en pantallas chicas */
+
   .split-container {
     flex-direction: column;
     gap: 30px;
