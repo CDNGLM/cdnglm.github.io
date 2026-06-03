@@ -1,79 +1,242 @@
-/* Estilos base para que se vea bien */
+/* ==========================================================================
+   1. RESETEO GENERAL Y VARIABLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Evita que el padding deforme las dimensiones */
+}
+
 body {
-    font-family: sans-serif;
-    padding: 40px;
-    background-color: #f4f4f9;
-    line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+  background-color: #f4f6f9;
+  line-height: 1.6;
 }
 
-section {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN (SUPERIOR)
+   ========================================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo a la izquierda, enlaces a la derecha */
+  align-items: center;            /* Centra verticalmente */
+  background-color: #1e1e24;      /* Gris oscuro elegante */
+  padding: 15px 40px;
+  position: sticky;               /* Se queda fijo arriba al hacer scroll */
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-/* --- INTERACCIONES DE BOTÓN --- */
-
-.btn-interactivo {
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    background-color: #3498db;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Suaviza la transición */
+.navbar-logo a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-/* 1. HOVER: Cuando el mouse está encima */
-.btn-interactivo:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;                      /* Espacio exacto entre enlaces */
 }
 
-/* 2. ACTIVE: Cuando mantienes el clic presionado */
-.btn-interactivo:active {
-    background-color: #1c5980;
-    transform: scale(0.95);
+.navbar-links a {
+  color: #a0aab2;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* 3. FOCUS: Cuando el elemento es seleccionado (ej. con la tecla Tab) */
-.btn-interactivo:focus {
-    outline: 3px solid #f1c40f;
-    outline-offset: 4px;
+.navbar-links a:hover {
+  color: #00adb5;                 /* Cambia a cian al pasar el mouse */
 }
 
-/* --- INTERACCIONES DE INPUT --- */
-
-.input-interactivo {
-    padding: 10px;
-    width: 250px;
-    border: 2px solid #ccc;
-    transition: border-color 0.3s;
+/* Enlace especial para GitHub estilo Botón */
+.navbar-links a.btn-github {
+  color: #ffffff;
+  background-color: #00adb5;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-/* FOCUS: Al hacer clic dentro del cuadro de texto */
-.input-interactivo:focus {
-    border-color: #3498db;
-    outline: none;
-    background-color: #e8f4fd;
+.navbar-links a.btn-github:hover {
+  background-color: #007a80;
+  color: #ffffff;
 }
 
-/* --- INTERACCIONES DE ENLACES --- */
-
-.link-interactivo {
-    color: #e67e22;
-    text-decoration: none;
-    font-weight: bold;
+/* ==========================================================================
+   3. SECCIÓN HERO (BIENVENIDA)
+   ========================================================================== */
+.bienvenida {
+  background-color: #252830;
+  color: #ffffff;
+  padding: 100px 20px;
+  text-align: center;
 }
 
-/* VISITED: Cambia el color si el usuario ya entró a ese link */
-.link-interactivo:visited {
-    color: #8e44ad;
+.cuerpo-bienvenida {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* HOVER en link */
-.link-interactivo:hover {
-    text-decoration: underline;
+.cuerpo-bienvenida h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.cuerpo-bienvenida p {
+  font-size: 18px;
+  color: #c1c7cd;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  display: inline-block;
+  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid #00adb5;
+  padding: 10px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #00adb5;
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.4);
+}
+
+/* ==========================================================================
+   4. SECCIÓN DIVIDIDA A LA MITAD (50% / 50%)
+   ========================================================================== */
+.split-section {
+  padding: 80px 40px;
+  background-color: #ffffff;
+}
+
+.split-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;                  /* Activamos Flexbox */
+  align-items: center;            /* Centra el texto verticalmente con la imagen */
+  gap: 50px;                      /* Espacio de separación entre las dos mitades */
+}
+
+/* Ambas columnas ocupan exactamente el mismo espacio (el 50% disponible) */
+.split-left, .split-right {
+  flex: 1; 
+}
+
+.split-left h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1e1e24;
+}
+
+.split-left p {
+  margin-bottom: 15px;
+  color: #555555;
+}
+
+/* Imagen responsiva para que no se deforme ni se desborde */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   5. SECCIÓN DE FORMULARIO / INTERACTIVA
+   ========================================================================== */
+.form-section {
+  padding: 80px 20px;
+}
+
+.form-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  
+}
+
+.form-card h2 {
+  margin-bottom: 10px;
+}
+
+.form-card p {
+  color: #666666;
+  margin-bottom: 30px;
+}
+
+/* Contenedor que pone el Input y el Link en la misma línea */
+.interactive-elements {
+  display: flex;
+  flex-direction: column;         /* Por defecto apilados en móvil */
+  gap: 25px;
+}
+
+
+
+/* Estilo del Enlace dentro de la tarjeta */
+.web-link {
+  color: #00adb5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  align-self: flex-start;
+  transition: color 0.3s;
+}
+
+.web-link:hover {
+  text-decoration: underline;
+  color: #007a80;
+}
+
+/* Etiquetas de estado secundarias en gris */
+.state-label {
+  font-size: 13px;
+  color: #888888;
+}
+
+/* ==========================================================================
+   6. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.main-footer {
+  background-color: #1e1e24;
+  color: #a0aab2;
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (Diseño para celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  
+  /* La sección dividida se apila verticalmente en pantallas chicas */
+  .split-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .hero-content h1 {
+    font-size: 32px;
+  }
 }
