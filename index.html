@@ -7,23 +7,84 @@
     <link rel="stylesheet"  href="style.css">
 </head>
 <body>
-    <h1>Hello World!!</h1>
-    <section>
-        <h3>1. Botón con múltiples estados</h3>
-        <button class="btn-interactivo">Interactúa conmigo</button>
-        <p><small>(Hover, Active, Focus)</small></p>
-    </section>
+    <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="#">CDNGLM</a>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Proyectos</a></li>
+        <li><a href="#" class="btn-github">GitHub</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section>
-        <h3>2. Campo de texto</h3>
-        <input type="text" class="input-interactivo" placeholder="Haz clic para escribir...">
-        <p><small>(Focus, Placeholder-shown)</small></p>
-    </section>
+  <main>
+        <section class="bienvenida">
+        <div class="cuerpo-binevenida">
+            <h1>Quién es CDNGLM??</h1>
+            <p>Soy Ismael Diaz Huillca, estudiante de ciencias de la computacion de la <a href="https://ucsp.edu.pe" target="_blank" class="web-link">Universidad Catolica San Pablo</a></p>
+            <p>actualmente curso el 2do semestre, y mis proyectos personales son: </p>
+            <p>-Esforzarme y asi poder lograr una beca.</p>
+            <p>-Crear una web para un proyecto personal.</p>
+            <p>-Crear una base de datos para la <a href="https://www.facebook.com/YWAM.JUCUMAREQUIPA/?locale=es_LA" target="_blank" class="web-link">IE Daniel Christian School.</a></p>
+            <p> * </p>
+            <a href="#contacto" class="hero-btn">Saber más</a>
+        </div>
+        </section>
 
-    <section>
-        <h3>3. Enlace visitado</h3>
-        <a href="https://github.com/CDNGLM" target="_blank" class="link-interactivo">Enlace a GitHub</a>
-        <p><small>(Link, Visited)</small></p>
-    </section>
+        <section class="split-section">
+        <div class="split-container">
+            
+            <div class="split-left">
+            <h2>Sobre mi:</h2>
+            <p>Nací el 8 de diciembre del 2007, tengo 18 años y logré ingresar a la famosisima <a href="https://www.unsa.edu.pe" target="_parent" class="web-link">UNSA</a>
+                , no era algo que queria estudiar por tal razón me cambie a la <a href="https://ucsp.edu.pe" target="_blank" class="web-link">Universidad Catolica San Pablo</a> donde me siento comodo y alegre para culminar mis estudios.</p>
+            <p>Termine mis estudios secundarios en la <a href="https://www.facebook.com/YWAM.JUCUMAREQUIPA/?locale=es_LA" target="_blank" class="web-link">IE Daniel Christian School</a>, 
+                colegio el cual hasta el dia de hoy visito y apoyo en actividades o eventos que tengan. Admiro y quiero mucho a mis padres, por los cuales me esfuerzo cada dia más y más
+                , ellos son mi motivacion para seguir y no rendirme.</p>
+            <p>Mis mejores amigos son: Obed, Nicolas, Mercy, Ale, Gaby, etc.</p>
+            </div>
+
+            <div class="split-right">
+            <img src="mi-foto.jpeg" alt="Vista previa de tecnología o código" class="responsive-img">
+            </div>
+
+        </div>
+        </section>
+
+        <section id="contacto" class="form-section">
+        <div class="form-card">
+            <h2>Interactúa con el sitio</h2>
+            <p>Prueba los elementos interactivos básicos de la página web a continuación:</p>
+            <div class="interactive-elements">
+                <div class="link-group">
+                    <label>3. Enlace visitado</label>
+                    <p> </p>
+                    <a href="https://github.com" target="_blank" class="web-link">Enlace a GitHub</a>
+                    <span class="state-label">(Link, Visited)</span>
+                </div>
+                <div class="teachers-link">
+                    <label>3. Enlaces Profesores</label>
+                    <p> </p>
+                    <a href="https://kick.com" target="_blank" class= "web-link">Nombre Profesora</a>
+                    <span class="state-label">(Link, Visited)</span>
+                </div>
+            </div>
+
+        </div>
+        </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 MiSitio Web. Desarrollado con dedicación.</p>
+    </div>
+  </footer>
+
+
 </body>
 </html>
