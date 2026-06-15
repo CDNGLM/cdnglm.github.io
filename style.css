@@ -1,8 +1,10 @@
-
+/* ==========================================================================
+   1. RESETEO GENERAL Y VARIABLES
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box; /* Evita que el padding deforme las dimensiones */
 }
 
 body {
@@ -12,20 +14,24 @@ body {
   line-height: 1.6;
 }
 
-
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN (SUPERIOR)
+   ========================================================================== */
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;          
-  background-color: #1e1e24;      
+  justify-content: space-between; /* Logo a la izquierda, enlaces a la derecha */
+  align-items: center;            /* Centra verticalmente */
+  background-color: #1e1e24;      /* Gris oscuro elegante */
   padding: 15px 40px;
-  position: sticky;              
+  position: sticky;               /* Se queda fijo arriba al hacer scroll */
   top: 0;
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
-
+html {
+  scroll-behavior: smooth; /* Hace que el movimiento por los enlaces sea fluido y suave */
+}
 .navbar-logo a {
   color: #ffffff;
   text-decoration: none;
@@ -38,7 +44,7 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 25px;                     
+  gap: 25px;                      /* Espacio exacto entre enlaces */
 }
 
 .navbar-links a {
@@ -50,10 +56,10 @@ body {
 }
 
 .navbar-links a:hover {
-  color: #00adb5;                 
+  color: #00adb5;                 /* Cambia a cian al pasar el mouse */
 }
 
-
+/* Enlace especial para GitHub estilo Botón */
 .navbar-links a.btn-github {
   color: #ffffff;
   background-color: #00adb5;
@@ -67,7 +73,9 @@ body {
   color: #ffffff;
 }
 
-
+/* ==========================================================================
+   3. SECCIÓN HERO (BIENVENIDA)
+   ========================================================================== */
 .bienvenida {
   background-color: #252830;
   color: #ffffff;
@@ -108,7 +116,9 @@ body {
   box-shadow: 0 4px 15px rgba(0, 173, 181, 0.4);
 }
 
-
+/* ==========================================================================
+   4. SECCIÓN DIVIDIDA A LA MITAD (50% / 50%)
+   ========================================================================== */
 .split-section {
   padding: 80px 40px;
   background-color: #ffffff;
@@ -117,11 +127,12 @@ body {
 .split-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;                  
-  align-items: center;           
-  gap: 50px;                      
+  display: flex;                  /* Activamos Flexbox */
+  align-items: center;            /* Centra el texto verticalmente con la imagen */
+  gap: 50px;                      /* Espacio de separación entre las dos mitades */
 }
 
+/* Ambas columnas ocupan exactamente el mismo espacio (el 50% disponible) */
 .split-left, .split-right {
   flex: 1; 
 }
@@ -137,7 +148,7 @@ body {
   color: #555555;
 }
 
-
+/* Imagen responsiva para que no se deforme ni se desborde */
 .responsive-img {
   width: 100%;
   height: auto;
@@ -146,7 +157,9 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-
+/* ==========================================================================
+   5. SECCIÓN DE FORMULARIO / INTERACTIVA
+   ========================================================================== */
 .form-section {
   padding: 80px 20px;
 }
@@ -170,15 +183,39 @@ body {
   margin-bottom: 30px;
 }
 
-
+/* Contenedor que pone el Input y el Link en la misma línea */
 .interactive-elements {
   display: flex;
-  flex-direction: column;         
+  flex-direction: column;         /* Por defecto apilados en móvil */
   gap: 25px;
 }
 
+.amigos-links-container {
+  display: flex;
+  flex-direction: column; /* Los alinea verticalmente */
+  gap: 10px;              /* Controla el espacio exacto entre cada enlace (cámbialo a tu gusto) */
+  margin-top: 8px;        /* Separa el bloque de enlaces de la etiqueta <label> */
+  margin-bottom: 8px;     /* Separa el bloque de enlaces del <span class="state-label"> */
+}
+
+.profes-links-container {
+  display: flex;
+  flex-direction: column; /* Los alinea verticalmente */
+  gap: 10px;              /* Controla el espacio exacto entre cada enlace (cámbialo a tu gusto) */
+  margin-top: 8px;        /* Separa el bloque de enlaces de la etiqueta <label> */
+  margin-bottom: 8px;     /* Separa el bloque de enlaces del <span class="state-label"> */
+}
+
+.redes-links-container {
+  display: flex;
+  flex-direction: column; /* Los alinea verticalmente */
+  gap: 10px;              /* Controla el espacio exacto entre cada enlace (cámbialo a tu gusto) */
+  margin-top: 8px;        /* Separa el bloque de enlaces de la etiqueta <label> */
+  margin-bottom: 8px;     /* Separa el bloque de enlaces del <span class="state-label"> */
+}
 
 
+/* Estilo del Enlace dentro de la tarjeta */
 .web-link {
   color: #00adb5;
   text-decoration: none;
@@ -193,13 +230,15 @@ body {
   color: #007a80;
 }
 
-
+/* Etiquetas de estado secundarias en gris */
 .state-label {
   font-size: 13px;
   color: #888888;
 }
 
-
+/* ==========================================================================
+   6. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
 .main-footer {
   background-color: #1e1e24;
   color: #a0aab2;
@@ -208,17 +247,39 @@ body {
   font-size: 14px;
 }
 
-
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (Diseño para celulares)
+   ========================================================================== */
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
   }
-
+  
   .split-container {
-    flex-direction: column;
-    gap: 30px;
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente (uno abajo del otro) */
+    gap: 30px;              /* Espacio de separación entre el texto y la foto */
+  }
+
+  /* Asegura que la imagen mantenga una proporción correcta en pantallas chicas */
+  .split-right {
+    width: 100%;
+    max-width: 400px;       /* Evita que la foto se agrande demasiado en pantallas medianas */
+    margin: 0 auto;         /* Centra la foto horizontalmente en el celular */
+  }
+
+  /* 2. SECCIÓN INTERACTIVA (CAMPOS DE TEXTO Y ENLACES) */
+  .interactive-elements {
+    display: flex;
+    flex-direction: column; /* Apila el campo de texto arriba y el link abajo */
+    gap: 25px;              /* Mantiene la separación impecable entre bloques */
   }
   
+  input[type="text"] {
+    width: 100%;            /* El campo de texto ocupará el ancho disponible del celular */
+    max-width: 100%;
+  }
+
   .hero-content h1 {
     font-size: 32px;
   }
